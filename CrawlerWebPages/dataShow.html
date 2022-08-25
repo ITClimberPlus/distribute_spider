@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>简易分布式爬虫系统数据展示</title>
+	    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+	    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+	    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"></link>
+	</head>
+	<body>
+
+	<table id="example" class="display" style="width:100%">
+		<div style="font-size: 30px;text-align: center;">简 易 分 布 式 爬 虫 系 统 数 据 展 示
+		<a href="index.html">
+			<button style="float: right;
+		    background-color: #e7e7e7; color: black;
+			border: none;
+			padding: 10px 15px;
+			text-align: center;
+			border-radius: 12px;
+			text-decoration: none;
+			font-size: 16px;
+			cursor: pointer;
+			"
+			>返回</button>
+		</a>
+		</div>
+			
+		
+	    <thead>
+	        <tr>
+	            <th>商品id</th>
+	            <th>商品来源</th>
+	            <th>手机品牌</th>
+				<th>手机标题</th>
+	            <th>手机价格</th>
+	            <th>手机评论</th>
+				<th>详细信息</th>
+				<th>图片地址</th>
+				<th>手机参数</th>
+	        </tr>
+	    </thead>
+	    <tbody>
+	        
+	    </tbody>
+	</table>
+	
+	<script>
+	    let table;
+	    $(document).ready(function () {
+	        $('#example').DataTable({
+                
+	            ajax:"TODO:请求网址",
+				"columns": [
+    			{ "data": "id" },
+    			{ "data": "source" },
+    			{ "data": "brand" },
+				{ "data": "title" },
+				{ "data": "price" },
+   				{ "data": "comment_count" },
+    			{ "data": "url" },
+				{ "data": "img_url" },
+				{ "data": "params" }
+ 				 ],
+                "language": {
+	    		"processing": "处理中...",
+	    		"lengthMenu": "显示 _MENU_ 项结果",
+	   			 "zeroRecords": "没有匹配结果",
+	    		"info": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+	    		"infoEmpty": "显示第 0 至 0 项结果，共 0 项",
+	    		"infoFiltered": "(由 _MAX_ 项结果过滤)",
+	    		"infoPostFix": "",
+	    		"search": "搜索查询:",
+	    		"searchPlaceholder": "搜索...",
+	    		"url": "",
+	    		"emptyTable": "表中数据为空",
+	    		"loadingRecords": "载入中...",
+	    		"infoThousands": ",",
+	    		"paginate": {
+	        	"first": "首页",
+	        	"previous": "上页",
+	        	"next": "下页",
+	        	"last": "末页"
+	    },
+	    		"aria": {
+	       		"paginate": {
+	         	"first": "首页",
+	            "previous": "上页",
+	            "next": "下页",
+	            "last": "末页"
+	        },
+	        "sortAscending": "以升序排列此列",
+	        "sortDescending": "以降序排列此列"
+	    },
+	    "thousands": ","
+	}
+	        });
+	     });
+	</script>
+	</body>
+	</html>
